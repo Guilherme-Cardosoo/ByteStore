@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=inter:wght@400;600;700&display=swap');
+
+:root {
+  --page1: #fff;
+  --page2: #eeecec;
+  --border-src: #ccc;
+  --text: #000;
+}
+
+.dark {
+  --page1: #272525;
+  --page2: #363636;
+  --border-src: #585858;
+  --text: #fff;
+}
+
+body {
+  background-color: var(--page1);
+  color: var(--text);
+  font-family: 'inter', sans-serif;
+  margin: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar {
+  background-color: #0060dd;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.3rem 6rem;
+}
+
+.center_header {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
+
+#src {
+  padding: 0.5rem 2.2rem 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--border-src);
+  background-color: var(--page2);
+  color: var(--text);
+  width: 320px;
+}
+
+#src:focus {
+  outline: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.center_header i.fa-magnifying-glass {
+  position: absolute;
+  right: 0.6rem;
+  color: #888;
+  cursor: pointer;
+}
+
+#darkModeButton,
+#loginButton {
+  color: var(--text);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.6rem;
+  padding: 0 2.5rem;
+}
+
+#left_menu,
+#pc_build {
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3rem;
+  margin: 0 2rem;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+}
+
+button#left_menu:hover {
+  opacity: 0.5;
+}
+
+a#pc_build:hover {
+  opacity: 0.5;
+}
+
+button#darkModeButton:hover {
+  opacity: 0.5;
+}
+
+a#loginButton:hover {
+  opacity: 0.5;
+}
+
+#darkModeButton .fa-sun {
+  display: none;
+}
+
+body.dark #darkModeButton .fa-sun {
+  display: inline;
+}
+
+body.dark #darkModeButton .fa-moon {
+  display: none;
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-br"> 
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,24 +8,99 @@
     <title>Monte seu PC</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
     <header>
-        <a href="main.html" id="mainpage">
+        <a href="home.html" id="mainpage">
             <i class="fa-solid fa-rotate-left"></i>
         </a>
-        <div class="title">
-            MONTE SEU PC
-        </div>
+        <div class="title">MONTE SEU PC</div>
         <button id="darkModeButton">
             <i class="fa-solid fa-sun"></i>
             <i class="fa-solid fa-moon"></i>
         </button>
+        <a href="login.html" id="loginButton">
+            <i class="fa-solid fa-user"></i>
+        </a>
     </header>
     <section class="alert">
-            <div class="text_alert">
-                ATENÇÃO! QUALQUER CONFIGURAÇÃO PERSONALIZADA NESTA FERRAMENTA NÃO SERÁ ENVIADA MONTADA!
-            </div>
-        </section>
-        <script src="js/dark_mode.js"></script>
+        <div class="text_alert">
+            ATENÇÃO! QUALQUER CONFIGURAÇÃO PERSONALIZADA NESTA FERRAMENTA NÃO SERÁ ENVIADA MONTADA!
+        </div>
+    </section>
+    <!-- teste abaixo desta linha -->
+    <main class="pc-builder">
+        <div id="steps-container">
+
+            <!-- Etapa 1: Processador -->
+            <section class="step active" data-step="0">
+                <h2>1. Escolha o Processador</h2>
+                <div class="item-grid">
+                    <div class="item" data-category="Processador" data-name="Intel Core i3" data-price="289.68">
+                        <img src="https://via.placeholder.com/150" alt="Intel i3">
+                        <h3>Intel Core i3</h3>
+                        <p>2-Core, 4-Threads, 3.4GHz</p>
+                        <span>R$ 289,68</span>
+                        <button class="add-to-cart">Selecionar</button>
+                    </div>
+                    <div class="item" data-category="Processador" data-name="AMD Athlon 3000G" data-price="349.99">
+                        <img src="https://via.placeholder.com/150" alt="Athlon 3000G">
+                        <h3>AMD Athlon 3000G</h3>
+                        <p>2-Core, 4-Threads, 3.5GHz</p>
+                        <span>R$ 349,99</span>
+                        <button class="add-to-cart">Selecionar</button>
+                    </div>
+                    <div class="item" data-category="Processador" data-name="AMD Ryzen 3 4100" data-price="379.99">
+                        <img src="https://via.placeholder.com/150" alt="Ryzen 3 4100">
+                        <h3>AMD Ryzen 3 4100</h3>
+                        <p>4-Core, 8-Threads, 3.8GHz</p>
+                        <span>R$ 379,99</span>
+                        <button class="add-to-cart">Selecionar</button>
+                    </div>
+                </div>
+                <button class="next-step">Próxima Etapa</button>
+            </section>
+
+            <!-- Etapa 2: Placa Mãe -->
+            <section class="step" data-step="1">
+                <h2>2. Escolha a Placa Mãe</h2>
+                <div class="item-grid">
+                    <div class="item" data-category="Placa Mãe" data-name="Gigabyte B450M" data-price="499.99">
+                        <img src="https://via.placeholder.com/150" alt="B450M">
+                        <h3>Gigabyte B450M</h3>
+                        <p>Socket AM4, DDR4</p>
+                        <span>R$ 499,99</span>
+                        <button class="add-to-cart">Selecionar</button>
+                    </div>
+                    <div class="item" data-category="Placa Mãe" data-name="ASUS Prime H510M" data-price="429.99">
+                        <img src="https://via.placeholder.com/150" alt="H510M">
+                        <h3>ASUS Prime H510M</h3>
+                        <p>Intel LGA1200, mATX</p>
+                        <span>R$ 429,99</span>
+                        <button class="add-to-cart">Selecionar</button>
+                    </div>
+                    <div class="item" data-category="Placa Mãe" data-name="MSI A520M" data-price="399.99">
+                        <img src="https://via.placeholder.com/150" alt="A520M">
+                        <h3>MSI A520M</h3>
+                        <p>Socket AM4, DDR4</p>
+                        <span>R$ 399,99</span>
+                        <button class="add-to-cart">Selecionar</button>
+                    </div>
+                </div>
+                <button class="next-step">Próxima Etapa</button>
+            </section>
+
+            <!-- Adicione mais etapas aqui... -->
+        </div>
+
+        <aside class="shopCart">
+            <h2>Carrinho</h2>
+            <ul id="cart_itens"></ul>
+            <div class="total">Total: R$ <span id="cart_total">0.00</span></div>
+        </aside>
+    </main>
+    <script src="js/pc_build.js"></script>
+    <script src="js/dark_mode.js"></script>
 </body>
+
 </html>
