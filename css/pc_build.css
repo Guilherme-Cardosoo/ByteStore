@@ -2,7 +2,8 @@
 
 :root {
     --page1: #fff;
-    --page2: #c9c7c7;
+    --page2: #e4e2e2;
+    --page3: #ffffff;
     --tittle-1: #000;
     --line: #000;
 }
@@ -10,6 +11,7 @@
 .dark {
     --page1: #272525;
     --page2: #363636;
+    --page3: #504f4f;
     --tittle-1: #fff;
     --line: #272525;
 }
@@ -128,15 +130,11 @@ div.text_alert {
 }
 
 .item {
-    background-color: #f0f0f0;
+    background-color: var(--page3);
     padding: 1vw;
     border-radius: 10px;
     text-align: center;
     transition: 0.3s;
-}
-
-body.dark .item {
-    background-color: #444;
 }
 
 .item img {
@@ -280,6 +278,11 @@ hr {
 
 .cart_button:hover {
     background-color: #248b04;
+}
+
+.pc_builder {
+    background-color: var(--page2);
+    border-radius: 10px;
 }
 
 .step-indicator {
