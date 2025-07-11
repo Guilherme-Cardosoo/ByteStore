@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/pc_build.css">
-    <title>Monte seu PC</title>
+    <title>Monte seu PC na ByteStore</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -28,13 +28,10 @@
             ATENÇÃO! QUALQUER CONFIGURAÇÃO PERSONALIZADA NESTA FERRAMENTA NÃO SERÁ ENVIADA MONTADA!
         </div>
     </section>
-    <!-- teste abaixo desta linha -->
     <main class="pc-builder">
         <div id="steps-container">
-
-            <!-- Etapa 1: Processador -->
             <section class="step active" data-step="0">
-                <h2>1. Escolha o Processador</h2>
+                <h2>Escolha o Processador</h2>
                 <div class="item-grid">
                     <div class="item" data-category="Processador" data-name="Intel Core i3" data-price="289.68">
                         <img src="https://via.placeholder.com/150" alt="Intel i3">
@@ -58,12 +55,13 @@
                         <button class="add-to-cart">Selecionar</button>
                     </div>
                 </div>
-                <button class="next-step">Próxima Etapa</button>
+                <div class="step_buttons">
+                    <button class="back" style="display: none;">Voltar</button>
+                    <button class="next">Próxima Etapa</button>
+                </div>
             </section>
-
-            <!-- Etapa 2: Placa Mãe -->
             <section class="step" data-step="1">
-                <h2>2. Escolha a Placa Mãe</h2>
+                <h2>Escolha a Placa Mãe</h2>
                 <div class="item-grid">
                     <div class="item" data-category="Placa Mãe" data-name="Gigabyte B450M" data-price="499.99">
                         <img src="https://via.placeholder.com/150" alt="B450M">
@@ -87,16 +85,33 @@
                         <button class="add-to-cart">Selecionar</button>
                     </div>
                 </div>
-                <button class="next-step">Próxima Etapa</button>
+                <div class="step_buttons">
+                    <button class="back">Voltar</button>
+                    <button class="next">Próxima Etapa</button>
+                </div>
             </section>
-
-            <!-- Adicione mais etapas aqui... -->
         </div>
-
         <aside class="shopCart">
-            <h2>Carrinho</h2>
+            <h2 class="tittle_cart">Carrinho</h2>
             <ul id="cart_itens"></ul>
-            <div class="total">Total: R$ <span id="cart_total">0.00</span></div>
+            <div class="total">
+                <div class="pix">
+                    <span class="pix_label">à vista</span>
+                    <span class="pix_value" id="pix_value">R$ 0,00</span>
+                    <span class="pix_note">no PIX com 15% de desconto</span>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="parc">
+                <span class="total_parc" id="cart_total">R$ 0,00</span>
+                <span class="parc_note">
+                    em até 12x de <span id="installment">R$ 0,00</span><br>
+                    sem juros no cartão
+                </span>
+            </div>
+            <button class="cart_button">FINALIZAR COMPRA</button>
         </aside>
     </main>
     <script src="js/pc_build.js"></script>

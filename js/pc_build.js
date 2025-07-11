@@ -1,16 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
     const steps = document.querySelectorAll(".step");
-    const nextButtons = document.querySelectorAll(".next-step");
+    const nextButtons = document.querySelectorAll(".step_buttons");
     const cartItems = document.getElementById("cart_itens");
     const cartTotal = document.getElementById("cart_total");
+    const pixValue = document.getElementById("pix_value");
+    const installmentValue = document.getElementById("installment");
     const cartData = {};
     let total = 0;
     let currentStep = 0;
 
-    nextButtons.forEach((btn, index) => {
+    nextButtons.forEach((btn) => {
         btn.addEventListener("click", () => {
             steps[currentStep].classList.remove("active");
-            currentStep = currentStep + 1;
+
+            currentStep++;
 
             if (steps[currentStep]) {
                 steps[currentStep].classList.add("active");
@@ -35,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cartItems.innerHTML = "";
         total = 0;
 
-        for (let [category, item] of Object.entries(cartData)) {
+        for (let item of Object.values(cartData)) {
             total += item.price;
         }
 
@@ -46,11 +49,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (visibleItem) {
                 const li = document.createElement("li");
-                li.textContent = `${visibleCategory}: ${visibleItem.name} - R$ ${visibleItem.price.toFixed(2).replace('.', ',')}`;
+                li.textContent = `${visibleCategory}: ${visibleItem.name}`;
                 cartItems.appendChild(li);
             }
         }
 
-        cartTotal.textContent = total.toFixed(2).replace('.', ',');
+        const totalPix = total * 0.85;
+        const installment = total / 12;
+
+        pixValue.textContent = `R$ ${totalPix.toFixed(2).replace('.', ',')}`;
+        cartTotal.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+        installmentValue.textContent = `R$ ${installment.toFixed(2).replace('.', ',')}`;
     }
 });
